@@ -1,0 +1,31 @@
+{
+  "root": true,
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "graphql": true
+  },
+  "settings": {
+    "import/core-modules": ["prop-types", "react"]
+  },
+  "rules": {
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTaggedTemplates": true
+      }
+    ]
+  }
+}
