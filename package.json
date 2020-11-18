@@ -1,55 +1,57 @@
 {
   "name": "balz-und-balz",
-  "version": "0.1.0",
-  "description": "Balz und Balz page",
+  "description": "Balz und Balz landing page based on Gatsby starter styled with Tailwind",
+  "version": "2.0.0",
+  "author": "Christian Rebelsky <christian.rebelskz@gmail.com>",
+  "dependencies": {
+    "gatsby": "2.25.3",
+    "gatsby-plugin-manifest": "2.4.35",
+    "gatsby-plugin-offline": "3.3.3",
+    "gatsby-plugin-postcss": "2.3.13",
+    "gatsby-plugin-react-helmet": "3.3.14",
+    "gatsby-plugin-sharp": "2.7.1",
+    "prop-types": "15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-helmet": "6.1.0"
+  },
   "keywords": [
-    "es6",
-    "webpack"
+    "gatsby",
+    "tailwind",
+    "tailwindcss",
+    "purgecss"
   ],
-  "engines": {
-    "node": ">= 6.9.0",
-    "npm": ">= 3.0.0"
-  },
+  "license": "MIT",
   "scripts": {
-    "start": "gulp",
-    "lint": "gulp lint",
-    "build": "gulp build --type production"
-  },
-  "author": "@crebelsky <christian.rebelsky@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:crebelsky/balz-balz.git"
+    "analyze:lint": "eslint --ext .jsx --ext .js .",
+    "analyze:prettier": "prettier --list-different \"**/*.{css,js,jsx,json,md}\"",
+    "analyze": "npm run analyze:lint && npm run analyze:prettier",
+    "fix:lint": "eslint --ext .jsx --ext .js . --fix",
+    "fix:prettier": "prettier --write \"**/*.{css,js,jsx,json,md}\"",
+    "fix": "npm run fix:lint && npm run fix:prettier",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "dev": "npm run develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "devDependencies": {
-    "babel-core": "^6.1.2",
-    "babel-eslint": "^4.1.6",
-    "babel-loader": "^6.0.1",
-    "babel-preset-es2015": "^6.1.2",
-    "critical": "^0.7.0",
-    "del": "^1.1.1",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.1.0",
-    "gulp-concat": "^2.5.0",
-    "gulp-connect": "^2.2.0",
-    "gulp-eslint": "^1.1.1",
-    "gulp-livereload": "^3.7.0",
-    "gulp-load-plugins": "^1.0.0",
-    "gulp-sass": "4.0.2",
-    "gulp-size": "^1.2.0",
-    "gulp-uglify": "^1.5.1",
-    "gulp-util": "^3.0.3",
-    "gulp-watch": "^4.1.1",
-    "pre-commit": "^1.1.2",
-    "webpack": "^1.12.3",
-    "webpack-dev-middleware": "^1.0.11",
-    "webpack-stream": "^2.1.1"
+    "@tailwindcss/custom-forms": "0.2.1",
+    "autoprefixer": "9.8.6",
+    "babel-eslint": "10.1.0",
+    "cssnano": "4.1.10",
+    "eslint": "7.10.0",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-react": "7.21.5",
+    "gatsby-plugin-eslint": "2.0.8",
+    "prettier": "2.1.2",
+    "tailwindcss": "1.9.6"
   },
-  "dependencies": {
-    "foundation-sites": "^6.2.1",
-    "jquery": "^3.5.1",
-    "moment": "^2.20.1"
-  },
-  "pre-commit": [
-    "lint"
-  ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crebelsky/balz-balz"
+  }
 }
