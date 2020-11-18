@@ -5,11 +5,6 @@
   "author": "Christian Rebelsky <christian.rebelskz@gmail.com>",
   "dependencies": {
     "gatsby": "2.25.3",
-    "gatsby-plugin-manifest": "2.4.35",
-    "gatsby-plugin-offline": "3.3.3",
-    "gatsby-plugin-postcss": "2.3.13",
-    "gatsby-plugin-react-helmet": "3.3.14",
-    "gatsby-plugin-sharp": "2.7.1",
     "prop-types": "15.7.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
@@ -38,7 +33,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "devDependencies": {
-    "@tailwindcss/custom-forms": "0.2.1",
+    "@svgr/webpack": "^5.5.0",
     "autoprefixer": "9.8.6",
     "babel-eslint": "10.1.0",
     "cssnano": "4.1.10",
@@ -47,6 +42,13 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-react": "7.21.5",
     "gatsby-plugin-eslint": "2.0.8",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-svgr": "^2.0.2",
+    "gatsby-plugin-manifest": "2.4.35",
+    "gatsby-plugin-offline": "3.3.3",
+    "gatsby-plugin-postcss": "2.3.13",
+    "gatsby-plugin-react-helmet": "3.3.14",
+    "gatsby-plugin-sharp": "2.7.1",
     "prettier": "2.1.2",
     "tailwindcss": "1.9.6"
   },

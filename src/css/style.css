@@ -3,3 +3,18 @@
 @tailwind components;
 /*! purgecss end ignore */
 @tailwind utilities;
+
+.background {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../assets/images/background.png);
+}
+
+.page-home__logo {
+    max-width: 180px;
+}
+
+h1, h2, p, .divider {
+    margin-bottom: 1rem;
+}
