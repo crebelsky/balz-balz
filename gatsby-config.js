@@ -21,20 +21,27 @@ module.exports = {
         background_color: fullConfig.theme.colors.backgound,
         theme_color: fullConfig.theme.colors.white,
         display: `minimal-ui`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [
-          require(`tailwindcss`)(tailwindConfig),
-          require(`autoprefixer`),
-          ...(process.env.NODE_ENV === `production`
-            ? [require(`cssnano`)]
-            : []),
+        icon: 'static/media/icons/apple-touch-icon.png',
+        icons: [
+          {
+            src: `static/media/icons/favicon-16x16.png`,
+            sizes: `16x16`,
+            type: `image/png`,
+          },
+          {
+            src: `static/media/icons/favicon-32x32.png`,
+            sizes: `32x32`,
+            type: `image/png`,
+          },
+          {
+            src: `static/media/icons/favicon-48x48.png`,
+            sizes: `48x48`,
+            type: `image/png`,
+          },
         ],
       },
     },
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-offline`,
   ],
 };

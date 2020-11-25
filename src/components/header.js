@@ -6,8 +6,7 @@ function Header() {
 
   return (
     <header>
-      <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
-        
+      <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">        
         <button
           className="items-center block px-3 py-2 text-white border border-white rounded md:hidden"
           onClick={() => toggleExpansion(!isExpanded)}
@@ -29,12 +28,25 @@ function Header() {
         >
           {[
             {
-              route: `/about`,
-              title: `About`,
+              route: `/oeffnungszeiten`,
+              title: `Öffnungszeiten`,
             },
             {
-              route: `/contact`,
-              title: `Contact`,
+              route: `/impressum`,
+              title: `Impressum`,
+            },
+            {
+              route: `/datenschutz`,
+              title: `Datenschutz`,
+            },
+            {
+              route: `https://www.facebook.com/BalzundBalz/`,
+              title: `Facebook`,
+              
+            },
+            {
+              route: `https://www.instagram.com/balzundbalz/`,
+              title: `Instagram`,
             },
           ].map((link) => (
             <Link
