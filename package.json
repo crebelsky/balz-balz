@@ -1,55 +1,25 @@
 {
-  "name": "balz-und-balz",
+  "name": "balz-balz",
   "version": "0.1.0",
-  "description": "Balz und Balz page",
-  "keywords": [
-    "es6",
-    "webpack"
-  ],
-  "engines": {
-    "node": ">= 6.9.0",
-    "npm": ">= 3.0.0"
-  },
+  "private": true,
   "scripts": {
-    "start": "gulp",
-    "lint": "gulp lint",
-    "build": "gulp build --type production"
-  },
-  "author": "@crebelsky <christian.rebelsky@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:crebelsky/balz-balz.git"
-  },
-  "devDependencies": {
-    "babel-core": "^6.1.2",
-    "babel-eslint": "^4.1.6",
-    "babel-loader": "^6.0.1",
-    "babel-preset-es2015": "^6.1.2",
-    "critical": "^0.7.0",
-    "del": "^1.1.1",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.1.0",
-    "gulp-concat": "^2.5.0",
-    "gulp-connect": "^2.2.0",
-    "gulp-eslint": "^1.1.1",
-    "gulp-livereload": "^3.7.0",
-    "gulp-load-plugins": "^1.0.0",
-    "gulp-sass": "4.0.2",
-    "gulp-size": "^1.2.0",
-    "gulp-uglify": "^1.5.1",
-    "gulp-util": "^3.0.3",
-    "gulp-watch": "^4.1.1",
-    "pre-commit": "^1.1.2",
-    "webpack": "^1.12.3",
-    "webpack-dev-middleware": "^1.0.11",
-    "webpack-stream": "^2.1.1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "foundation-sites": "^6.2.1",
-    "jquery": "^3.5.1",
-    "moment": "^2.20.1"
+    "framer-motion": "^3.3.0",
+    "next": "10.0.6",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "tailwindcss": "^2.0.2"
   },
-  "pre-commit": [
-    "lint"
-  ]
+  "devDependencies": {
+    "@svgr/webpack": "^5.5.0",
+    "@types/node": "^14.14.25",
+    "@types/react": "^17.0.1",
+    "autoprefixer": "^10.2.4",
+    "postcss": "^8.2.4",
+    "typescript": "^4.1.3"
+  }
 }

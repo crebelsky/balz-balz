@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply text-white h-screen w-screen bg-gray-900;
+  background: url("/images/background-small.png");
+  background-size: cover;
+}
+
+.container {
+  @apply grid justify-items-center grid-cols-1;
+  grid-template-rows: 5em 1fr;
+  grid-template-areas: "header" "main";
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("/images/background-medium.png");
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    background-image: url("/images/background.png");
+  }
+  .container {
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: 7em 1fr;
+    grid-template-areas: ". header header" ". main .";
+  }
+}
+
+.page-header {
+  grid-area: header;
+}
+.page-content {
+  grid-area: main;
+}
+
+.divider {
+  @apply h-px w-full bg-white block;
+}
+
+h1,
+h2,
+section,
+.divider {
+  margin-bottom: 1rem;
+}
