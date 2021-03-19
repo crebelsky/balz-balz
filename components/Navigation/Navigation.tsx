@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import NavigationItem, { NavigationItemProps } from "./Item";
+
+import { useOverlayContext } from "../Navigation/NavigationContext";
 import MenuIcon from "../../public/icons/add.svg";
 
 const menuItems: NavigationItemProps[] = [
@@ -53,6 +55,7 @@ const menuVariants = {
 
 export default function Navigation() {
   const [isOpen, toggleOpen] = useState(false);
+  const { isOverlayOpen, setOverlayOpen } = useOverlayContext();
   return (
     <>
       <motion.nav
@@ -64,16 +67,22 @@ export default function Navigation() {
       >
         <ul className="flex flex-row justify-center items-center">
           {menuItems.map((item: NavigationItemProps, index: number) => (
-            <NavigationItem key={index} href={item.href}>
-              {item.label}
-            </NavigationItem>
+            <NavigationItem
+              key={index}
+              href={item.href}
+              overlay={item.overlay}
+              label={item.label}
+            />
           ))}
         </ul>
       </motion.nav>
       <motion.div
         variants={iconVariants}
         animate={isOpen ? "opened" : "closed"}
-        onClick={() => toggleOpen(!isOpen)}
+        onClick={() => {
+          toggleOpen(!isOpen);
+          isOverlayOpen && setOverlayOpen(!isOverlayOpen);
+        }}
         className="z-50 cursor-pointer"
       >
         <MenuIcon />

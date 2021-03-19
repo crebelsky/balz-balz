@@ -1,7 +1,21 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useOverlayContext } from "../Navigation/NavigationContext";
 
-export interface OverlayProps {}
+export interface OverlayProps {
+  copy: string;
+}
+
+const overlayItems: OverlayProps[] = [
+  {
+    copy: "Öffnungszeiten",
+  },
+  {
+    copy: "Impressum",
+  },
+  {
+    copy: "Datenschutz",
+  },
+];
 
 const overlayVariants = {
   opened: {
@@ -12,24 +26,23 @@ const overlayVariants = {
   },
 };
 
-export default function Overlay(props: OverlayProps) {
-  const [isOpen, toggleOpen] = useState(false);
+export default function Overlay() {
+  const { isOverlayOpen, overlayContent } = useOverlayContext();
+
+  const overlayCopy = overlayItems.filter(
+    (item) => item.copy === overlayContent
+  );
 
   return (
     <>
       <motion.div
-        className="h-screen w-screen bg-gray-900"
+        className="page-overlay absolute h-screen w-screen bg-gray-900 z-50"
         initial={false}
         variants={overlayVariants}
         transition={{ type: "tween" }}
-        animate={isOpen ? "opened" : "closed"}
+        animate={isOverlayOpen ? "opened" : "closed"}
       >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-          nobis eos mollitia, ipsum suscipit voluptas accusantium, in
-          repellendus, repudiandae ex eligendi repellat hic earum necessitatibus
-          numquam maxime laboriosam odit laborum!
-        </p>
+        <p>{overlayCopy[0]?.copy}</p>
       </motion.div>
     </>
   );
